@@ -137,7 +137,24 @@
 
   <p class="footer">© Muhammad Aripin Ilham</p>
 </div>
+<!-- CHATBOT -->
+<div id="chatbot">
+  <div class="chat-header">
+    Aripin AI 🤖
+    <span onclick="toggleChat()">✕</span>
+  </div>
 
+  <div class="chat-body" id="chatBody">
+    <div class="bot">Halo 👋 Saya Aripin AI. Tanya apa saja tentang portfolio ini.</div>
+  </div>
+
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Ketik pertanyaan..." />
+    <button onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<button id="chatToggle" onclick="toggleChat()">💬</button>
 <!-- FULLSCREEN IMAGE -->
 <div id="img1" class="img-full"><a href="#"><img src="iot1.jpg"></a></div>
 <div id="img2" class="img-full"><a href="#"><img src="iot2.jpg"></a></div>
@@ -183,4 +200,5 @@ t.onclick=()=>{
 </body>
 
 </html>
+
 
