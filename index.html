@@ -196,9 +196,48 @@ t.onclick=()=>{
   t.textContent=document.body.classList.contains("light")?"☀️":"🌙";
 };
 </script>
+<script>
+const WORKER_URL = "https://frosty-bonus-f017.tazzpyns.workers.dev/";
 
+function toggleChat() {
+  var c = document.getElementById("chatbot");
+  if (!c) return;
+  c.style.display = (c.style.display === "flex") ? "none" : "flex";
+}
+
+function sendChat() {
+  var input = document.getElementById("chatInput");
+  var text = input.value;
+  if (!text) return;
+
+  var body = document.getElementById("chatBody");
+
+  body.innerHTML += '<div class="user"><b>Kamu:</b> ' + text + '</div>';
+  input.value = "";
+
+  body.innerHTML += '<div class="bot">Mengetik...</div>';
+  body.scrollTop = body.scrollHeight;
+
+  fetch(WORKER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text })
+  })
+  .then(function(res) {
+    return res.json();
+  })
+  .then(function(data) {
+    body.lastChild.innerHTML = "<b>Aripin AI:</b> " + data.reply;
+    body.scrollTop = body.scrollHeight;
+  })
+  .catch(function() {
+    body.lastChild.innerHTML = "❌ Gagal terhubung ke AI";
+  });
+}
+</script>
 </body>
 
 </html>
+
 
 
