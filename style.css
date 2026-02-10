@@ -1,0 +1,40 @@
+:root{
+--bg:#0b1220;--card:rgba(255,255,255,.07);
+--text:#eaffff;--accent:#00ffd5}
+.light{--bg:#f5f7fa;--card:#fff;--text:#111;--accent:#0077ff}
+body{margin:0;font-family:Arial;background:var(--bg);color:var(--text)}
+#toggle{position:fixed;top:12px;right:12px;border:none;border-radius:50%;padding:10px;background:var(--accent)}
+.container{max-width:420px;margin:auto;padding:20px}
+.profile{text-align:center;margin-top:40px}
+.profile img{width:120px;border-radius:50%;box-shadow:0 0 25px var(--accent)}
+.profile p{color:var(--accent)}
+.name{display:inline-flex;align-items:center;gap:8px}
+.verified{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;animation:pulse 2s infinite}
+.verified-blue{background:rgba(0,119,255,.25);color:#0077ff}
+.verified svg{width:14px;height:14px;fill:currentColor}
+@keyframes pulse{50%{box-shadow:0 0 15px currentColor}}
+
+.section{margin-top:35px}
+.section-title{font-size:12px;letter-spacing:2px;color:var(--accent);margin-left:10px}
+
+.pill{display:flex;align-items:center;gap:12px;padding:18px 22px;margin-top:14px;border-radius:40px;background:var(--card);color:var(--text);text-decoration:none}
+.icon{width:40px;height:40px;border-radius:50%;background:rgba(0,255,213,.15);display:flex;align-items:center;justify-content:center}
+.icon svg{width:20px;height:20px;fill:var(--accent)}
+.pill-iot{justify-content:space-between}
+.arrow{transition:.3s}
+details[open] .arrow{transform:rotate(180deg)}
+
+.project-content{margin-top:14px;padding:16px;border-radius:14px;background:var(--card)}
+.badges{display:flex;gap:8px;margin-bottom:10px}
+.badge{font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(0,255,213,.15);color:var(--accent)}
+.gallery{display:flex;gap:10px;overflow-x:auto}
+.gallery img{width:120px;border-radius:10px}
+
+.info-card{padding:16px;border-radius:14px;background:var(--card)}
+.info-header{display:flex;gap:10px;align-items:center;color:var(--accent)}
+
+.img-full{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:99999}
+.img-full img{max-width:90%;max-height:90%}
+.img-full:target{display:flex}
+
+.footer{text-align:center;margin:40px 0;font-size:12px;opacity:.6}
