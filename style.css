@@ -11,13 +11,41 @@ body{margin:0;font-family:Arial;background:var(--bg);color:var(--text)}
 body{
   font-family: 'Rajdhani', sans-serif;
 }
-.name{
-  font-family: 'Orbitron', sans-serif;
-  font-size: 22px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #eaffff;
+.name-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:'Orbitron', sans-serif;
+  font-size:24px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.name-text{
+  display:inline-block;
+}
+
+.verified-badge{
+  width:24px;
+  height:24px;
+  background:#0077ff33;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation: glow 2s infinite alternate;
+}
+
+.verified-badge svg{
+  width:14px;
+  height:14px;
+  fill:#0077ff;
+}
+
+@keyframes glow{
+  from{ box-shadow:0 0 5px #0077ff; }
+  to{ box-shadow:0 0 15px #0077ff; }
 }
 
 .subtitle{
@@ -137,4 +165,5 @@ details[open] .arrow{transform:rotate(180deg)}
 @keyframes blink{
   50% { opacity: 0; }
 }
+
 
